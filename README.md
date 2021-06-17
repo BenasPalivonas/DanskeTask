@@ -1,4 +1,4 @@
-
+nx run api:serve nx serve front-end
 
 # DanskeTask
 
