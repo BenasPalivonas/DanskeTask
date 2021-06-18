@@ -1,21 +1,23 @@
-/**
- * This is not a production server yet!
- * This is only a minimal backend to get started.
- */
-
 import * as express from 'express';
-
+import * as mongoose from 'mongoose';
+import { carPlatesRouter } from './routes/carPlates';
 const app = express();
-
-app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to api!' });
+const url= 'mongodb://localhost/CarPlatesDb';
+mongoose.connect(url, {useNewUrlParser:true, useUnifiedTopology:true});
+const con = mongoose.connection;
+con.on('open', ()=>{
+console.log("connected");
 });
+const carPatesRouter=carPlatesRouter;
 
+app.use(express.json());
+
+app.use('/carPlates',carPatesRouter);
 const port = process.env.port || 3333;
 const server = app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}/api`);
 });
-export const testtest=(a:number,b:number):number=>{
-return a+b;
-}
+app.get('/api', (req, res) => {
+  res.send({ message: 'Welcome to api!' });
+});
 server.on('error', console.error);

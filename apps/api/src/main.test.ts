@@ -1,5 +1,5 @@
-import {testtest} from './main';
-test("test",async ()=>{
+import {testtest} from './test';
+test("test", ()=>{
     try{
     expect(testtest(1,2)).toBe(3);
     }
