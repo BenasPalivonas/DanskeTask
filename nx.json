@@ -28,6 +28,9 @@
     "front-end-e2e": {
       "tags": [],
       "implicitDependencies": ["front-end"]
+    },
+    "shared-ui": {
+      "tags": []
     }
   }
 }
