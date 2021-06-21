@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./filter-menu.component.scss']
 })
 export class FilterMenuComponent implements OnInit {
-
-  constructor() { }
+  constructor() {
+   }
 
   ngOnInit(): void {
   }
