@@ -1,7 +1,7 @@
 import {AfterViewInit, Component, Input, OnChanges, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
-import { CarPlate } from 'libs/car-plates/data-acess/src/lib/car-plate';
+import { CarPlate } from '../../../../car-plates/car-plate-interface';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',

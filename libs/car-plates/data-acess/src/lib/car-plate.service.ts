@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import { CarPlate } from './car-plate';
+import {CarPlate} from '../../../car-plate-interface';
 import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'

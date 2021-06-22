@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CarPlate } from 'libs/car-plates/data-acess/src/lib/car-plate';
+import { CarPlate } from '../../../../car-plate-interface';
 import { CarPlateService } from 'libs/car-plates/data-acess/src/lib/car-plate.service';
 @Component({
   selector: 'car-plates-list',
