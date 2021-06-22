@@ -7,13 +7,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { FilterMenuComponent } from './filter-menu/filter-menu.component';
+import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   imports: [CommonModule,
   MatPaginatorModule,
   BrowserAnimationsModule,
   BrowserModule,
   MatFormFieldModule,
-  MatTableModule
+  MatTableModule,
+  MatButtonModule
   ],
   declarations: [
     TableComponent,

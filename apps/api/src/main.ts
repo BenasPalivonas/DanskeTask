@@ -11,7 +11,8 @@ console.log("connected");
 const carPatesRouter=carPlatesRouter;
 
 app.use(express.json());
-
+var cors = require('cors');
+app.use(cors({origin: '*'}));
 app.use('/carPlates',carPatesRouter);
 const port = process.env.port || 3333;
 const server = app.listen(port, () => {

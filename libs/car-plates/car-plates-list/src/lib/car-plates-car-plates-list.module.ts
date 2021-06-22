@@ -1,15 +1,15 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { SharedUiModule } from '@danske-task/shared-ui';
 import { CarPlatesListComponent } from './car-plates-list/car-plates-list.component';
-import {SharedUiModule} from '@danske-task/shared-ui';
-
+import {CarPlatesDataAcessModule} from '@danske-task/car-plates/data-acess';
 @NgModule({
   imports: [
-    CommonModule
-  ,SharedUiModule],
-  declarations: [
-    CarPlatesListComponent
-  ],
+    CommonModule,
+    SharedUiModule,
+    CarPlatesDataAcessModule,
+],
+  declarations:[ CarPlatesListComponent],
   exports: [
     CarPlatesListComponent
   ],

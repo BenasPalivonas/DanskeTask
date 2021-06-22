@@ -1,25 +1,19 @@
 import {AfterViewInit, Component, Input, OnChanges, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
- export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
-}
+import { CarPlate } from 'libs/car-plates/data-acess/src/lib/car-plate';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements AfterViewInit ,OnInit  {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  //i can do this =[{name:"carPlate",displayName:"Car Plate"}]
-  @Input() tableData:PeriodicElement[]=[];
-  dataSource?:MatTableDataSource<PeriodicElement>;
-  @ViewChild(MatPaginator) paginator?: MatPaginator;
+  displayedColumns: string[] = ['_id', 'plateNumber', 'ownerName', 'actions'];
+  @Input() tableData?:CarPlate[]=[];
+  dataSource?:MatTableDataSource<CarPlate>;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
   ngOnInit(){
-  this.dataSource =new MatTableDataSource<PeriodicElement>(this.tableData);
+  this.dataSource =new MatTableDataSource<CarPlate>(this.tableData);
   }
   ngAfterViewInit() {
   if(this.dataSource){

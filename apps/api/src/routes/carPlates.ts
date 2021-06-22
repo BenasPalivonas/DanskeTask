@@ -25,7 +25,7 @@ carPlatesRouter.get('/get/:id', async (req,res)=>{
         res.send("Error"+err);
     }
 })
-carPlatesRouter.post('/post',async (req,res)=>{
+carPlatesRouter.post('/create',async (req,res)=>{
     const carPlate : ICarPlateSchema = new CarPlate({
        plateNumber: req.body.plateNumber,
        ownerName: req.body.ownerName
@@ -38,7 +38,7 @@ catch(err){
     res.send("Error"+err);
 }
 });
-carPlatesRouter.patch("/patch/:id", async(req,res)=>{
+carPlatesRouter.put("/put/:id", async(req,res)=>{
     try{
         const carPlate:ICarPlateSchema= await CarPlate.findById(req.params.id);
         if(!checkIfValidId(req.params.id)){

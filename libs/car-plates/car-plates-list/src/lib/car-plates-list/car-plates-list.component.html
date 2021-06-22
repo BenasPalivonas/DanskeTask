@@ -1,3 +1,4 @@
-<p>car-plates-list works!</p>
 <app-filter-menu></app-filter-menu>
-<app-table [tableData]="tableData"></app-table>
+<ng-container *ngIf="carPlates.length">
+<app-table [tableData]="carPlates"></app-table>
+</ng-container>
