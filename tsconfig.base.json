@@ -15,6 +15,22 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@danske-task/car-plate": ["libs/car-plate/src/index.ts"],
+      "@danske-task/car-plates/car-plates-list": [
+        "libs/car-plates/car-plates-list/src/index.ts"
+      ],
+      "@danske-task/car-plates/car-plates-list/car-plates-list": [
+        "libs/car-plates/car-plates-list/car-plates-list/src/index.ts"
+      ],
+      "@danske-task/car-plates/car-plates-list/car-plates-list-ui": [
+        "libs/car-plates/car-plates-list/car-plates-list-ui/src/index.ts"
+      ],
+      "@danske-task/car-plates/data-acess": [
+        "libs/car-plates/data-acess/src/index.ts"
+      ],
+      "@danske-task/car-plates/data-acess/car-plates-list": [
+        "libs/car-plates/data-acess/car-plates-list/src/index.ts"
+      ],
       "@danske-task/shared-ui": ["libs/shared-ui/src/index.ts"]
     }
   },

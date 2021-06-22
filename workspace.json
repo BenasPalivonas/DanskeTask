@@ -51,6 +51,81 @@
         }
       }
     },
+    "car-plate": {
+      "projectType": "library",
+      "root": "libs/car-plate",
+      "sourceRoot": "libs/car-plate/src",
+      "prefix": "danske-task",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/car-plate"],
+          "options": {
+            "jestConfig": "libs/car-plate/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/car-plate/src/**/*.ts",
+              "libs/car-plate/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "car-plates-car-plates-list": {
+      "projectType": "library",
+      "root": "libs/car-plates/car-plates-list",
+      "sourceRoot": "libs/car-plates/car-plates-list/src",
+      "prefix": "danske-task",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/car-plates/car-plates-list"],
+          "options": {
+            "jestConfig": "libs/car-plates/car-plates-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/car-plates/car-plates-list/src/**/*.ts",
+              "libs/car-plates/car-plates-list/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "car-plates-data-acess": {
+      "projectType": "library",
+      "root": "libs/car-plates/data-acess",
+      "sourceRoot": "libs/car-plates/data-acess/src",
+      "prefix": "danske-task",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/car-plates/data-acess"],
+          "options": {
+            "jestConfig": "libs/car-plates/data-acess/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/car-plates/data-acess/src/**/*.ts",
+              "libs/car-plates/data-acess/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "front-end": {
       "projectType": "application",
       "root": "apps/front-end",
