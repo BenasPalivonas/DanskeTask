@@ -9,5 +9,6 @@ module.exports = {
     '<rootDir>/libs/car-plates/car-plates-list/car-plates-list-ui',
     '<rootDir>/libs/car-plates/data-acess/car-plates-list',
     '<rootDir>/libs/car-plates/car-plates-list',
+    '<rootDir>/libs/books/book-list',
   ],
 };

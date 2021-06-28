@@ -1,26 +1,27 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {CarPlate} from '../../../car-plate-interface';
+import {HttpClient, HttpStatusCode} from '@angular/common/http';
+import {CarPlate} from '../../../models/car-plate-interface';
 import { Observable } from 'rxjs';
+const apiURL= 'http://localhost:3333/carPlates';
 @Injectable({
   providedIn: 'root'
 })
 export class CarPlateService {
-  apiURL= 'http://localhost:3333/carPlates';
+
   constructor(private httpClient:HttpClient) { }
   public CreateCarPlate(carPlate:CarPlate):Observable<CarPlate>{
-    return this.httpClient.post<CarPlate>(`${this.apiURL}/create`,carPlate);
+    return this.httpClient.post<CarPlate>(`${apiURL}/create`,carPlate);
   }
   public UpdateCarPlate(carPlate:CarPlate):Observable<CarPlate>{
-    return this.httpClient.put<CarPlate>(`${this.apiURL}/put/${carPlate._id}`,carPlate);
+    return this.httpClient.put<CarPlate>(`${apiURL}/put/${carPlate._id}`,carPlate);
   }
-  public DeleteCarPlate(id:number){
-    return this.httpClient.delete(`${this.apiURL}/delete/${id}`);
+  public DeleteCarPlate(id:number):Observable<Record<string,any>>{
+    return this.httpClient.delete(`${apiURL}/delete/${id}`);
   }
   public GetCarPlateById(id:number):Observable<CarPlate>{
-    return this.httpClient.get<CarPlate>(`${this.apiURL}/get/${id}`);
+    return this.httpClient.get<CarPlate>(`${apiURL}/get/${id}`);
   }
   public GetCarPlates():Observable<CarPlate[]>{
-    return this.httpClient.get<CarPlate[]>(`${this.apiURL}/get`);
+    return this.httpClient.get<CarPlate[]>(`${apiURL}/get`);
   }
 }

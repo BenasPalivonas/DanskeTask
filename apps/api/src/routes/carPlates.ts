@@ -1,5 +1,6 @@
 import * as express from 'express';
 import * as mongoose from 'mongoose';
+import { NOTFOUND } from 'node:dns';
 import { ICarPlateSchema } from '../models/ICarPlate';
 import { CarPlatesSeedData } from '../seed/seedData';
 const CarPlate= require('../models/CarPlate');
@@ -15,7 +16,7 @@ carPlatesRouter.get('/get', async (req,res)=>{
 })
 carPlatesRouter.get('/get/:id', async (req,res)=>{
     if(!checkIfValidId(req.params.id)){
-        res.status(404).send("invalid id");
+        res.sendStatus(404).send("invalid id");
     }
     try{
     const carPlate:ICarPlateSchema= await CarPlate.findById(req.params.id);
@@ -59,11 +60,18 @@ carPlatesRouter.delete("/delete/:id",async (req,res)=>{
         const carPlate:ICarPlateSchema= await CarPlate.findById(id);
         if(!checkIfValidId(id)){
             res.send("invalid id");
+            return 0;
         }
-       carPlate.delete();
-        res.send(200).send(`Deleted car plate with id: ${id}`);
+        console.log(carPlate);
+        if(carPlate==null){
+            res.send("Not found");
+            return 0;
+        }
+       const response=await carPlate.delete();
+        res.send(response);
     }
     catch (err){
+        console.log(err);
         res.send("Error"+err);
     }
 })

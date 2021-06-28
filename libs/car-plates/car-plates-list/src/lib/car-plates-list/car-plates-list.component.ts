@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CarPlate } from '../../../../car-plate-interface';
+import { CarPlate } from '../../../../models/car-plate-interface';
 import { CarPlateService } from 'libs/car-plates/data-acess/src/lib/car-plate.service';
 @Component({
   selector: 'car-plates-list',
@@ -11,9 +11,16 @@ export class CarPlatesListComponent implements OnInit {
    constructor(private carPlatesService:CarPlateService){
    }
   ngOnInit(): void {
-    this.carPlatesService.GetCarPlates().subscribe((ans)=>{
-    this.carPlates=ans;
-    })
-    console.log(this.carPlates,"hello?XD");
+    this.GetCarPlates();
+  }
+ GetCarPlates() {
+    this.carPlatesService.GetCarPlates().subscribe((ans) => {
+      this.carPlates = ans;
+        });
+  }
+  HandleDelete(id:number):void{
+    this.carPlatesService.DeleteCarPlate(id).subscribe(()=>{
+      this.GetCarPlates();
+    });
   }
 }

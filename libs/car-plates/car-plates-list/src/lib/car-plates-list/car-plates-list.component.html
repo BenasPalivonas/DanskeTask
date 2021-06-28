@@ -1,4 +1,4 @@
 <app-filter-menu></app-filter-menu>
 <ng-container *ngIf="carPlates.length">
-<app-table [tableData]="carPlates"></app-table>
+<app-table [tableData]="carPlates" (HandleDelete)="HandleDelete($event)"></app-table>
 </ng-container>
