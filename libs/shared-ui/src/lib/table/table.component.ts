@@ -7,15 +7,14 @@ import {CarPlate} from '../../../../car-plates/models/car-plate-interface'
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
-export class TableComponent implements AfterViewInit , OnInit, OnChanges  {
+export class TableComponent implements AfterViewInit , OnChanges  {
   displayedColumns: string[] = ['_id', 'plateNumber', 'ownerName', 'actions'];
   @Input() tableData?:CarPlate[]=[];
   @Output() HandleDelete=new EventEmitter();
+  @Output() HandleEdit= new EventEmitter();
   dataSource?:MatTableDataSource<CarPlate>;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-  ngOnInit(){
-  this.assignDataSource();
-  }
+
   private assignDataSource() {
     this.dataSource = new MatTableDataSource<CarPlate>(this.tableData);
   }
@@ -33,7 +32,9 @@ export class TableComponent implements AfterViewInit , OnInit, OnChanges  {
     if(this.dataSource){
       this.dataSource.data=this.tableData as CarPlate[]
       this.dataSource.paginator = this.paginator || null;
+      return;
     }
+    this.assignDataSource();
   }
 
   deleteElement($element:CarPlate){
@@ -49,8 +50,9 @@ export class TableComponent implements AfterViewInit , OnInit, OnChanges  {
   //  this.dataSource.paginator = this.paginator || null;
   this.HandleDelete.emit($element._id);
   }
-  editElement(){
-    
+  editElement($element:CarPlate){
+    $element.ownerName+="test";
+    this.HandleEdit.emit($element);   
   }
   changePageEvent($event:any){
     console.log($event);

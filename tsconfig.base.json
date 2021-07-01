@@ -17,6 +17,9 @@
     "paths": {
       "@danske-task/books/book-list": ["libs/books/book-list/src/index.ts"],
       "@danske-task/car-plate": ["libs/car-plate/src/index.ts"],
+      "@danske-task/car-plates/car-plates-edit": [
+        "libs/car-plates/car-plates-edit/src/index.ts"
+      ],
       "@danske-task/car-plates/car-plates-list": [
         "libs/car-plates/car-plates-list/src/index.ts"
       ],

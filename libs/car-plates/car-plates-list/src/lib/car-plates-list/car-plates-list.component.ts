@@ -23,4 +23,7 @@ export class CarPlatesListComponent implements OnInit {
       this.GetCarPlates();
     });
   }
+  HandleEdit(carPlate:CarPlate):void{
+    this.carPlatesService.UpdateCarPlate(carPlate).subscribe();
+  }
 }

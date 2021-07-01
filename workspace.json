@@ -51,31 +51,6 @@
         }
       }
     },
-    "books-book-list": {
-      "projectType": "library",
-      "root": "libs/books/book-list",
-      "sourceRoot": "libs/books/book-list/src",
-      "prefix": "danske-task",
-      "targets": {
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/books/book-list"],
-          "options": {
-            "jestConfig": "libs/books/book-list/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/books/book-list/src/**/*.ts",
-              "libs/books/book-list/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
     "car-plate": {
       "projectType": "library",
       "root": "libs/car-plate",
@@ -96,6 +71,31 @@
             "lintFilePatterns": [
               "libs/car-plate/src/**/*.ts",
               "libs/car-plate/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "car-plates-car-plates-edit": {
+      "projectType": "library",
+      "root": "libs/car-plates/car-plates-edit",
+      "sourceRoot": "libs/car-plates/car-plates-edit/src",
+      "prefix": "danske-task",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/car-plates/car-plates-edit"],
+          "options": {
+            "jestConfig": "libs/car-plates/car-plates-edit/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/car-plates/car-plates-edit/src/**/*.ts",
+              "libs/car-plates/car-plates-edit/src/**/*.html"
             ]
           }
         }
